@@ -1,0 +1,11 @@
+#ignore all .txt files
+#Files
+*.txt
+obj
+bin
+Properties
+.vs
+
+*.csproj.user
+*.csproj
+*.sln
