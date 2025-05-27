@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
-using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
@@ -15,9 +14,9 @@ namespace SchoolApi.Migrations
                 name: "Ogrenciler",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Ad = table.Column<string>(type: "text", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Ad = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -28,9 +27,9 @@ namespace SchoolApi.Migrations
                 name: "Ogretmenler",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    Ad = table.Column<string>(type: "text", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Ad = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false)
                 },
                 constraints: table =>
                 {
@@ -41,10 +40,10 @@ namespace SchoolApi.Migrations
                 name: "Dersler",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "integer", nullable: false)
-                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
-                    DersAdi = table.Column<string>(type: "text", nullable: false),
-                    OgretmenId = table.Column<int>(type: "integer", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    DersAdi = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    OgretmenId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -61,8 +60,8 @@ namespace SchoolApi.Migrations
                 name: "OgrenciDersler",
                 columns: table => new
                 {
-                    OgrenciId = table.Column<int>(type: "integer", nullable: false),
-                    DersId = table.Column<int>(type: "integer", nullable: false)
+                    OgrenciId = table.Column<int>(type: "int", nullable: false),
+                    DersId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
